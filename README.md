@@ -47,6 +47,6 @@ An AI Agent is an entity that perceives its environment, processes that informat
 *   Purpose: Illustrates Proactive Agent.
 *   Proactive/Goal-Oriented; takes a broad goal (e.g., "Plan a vacation") and independently executes multi-step tasks (search, compare, build itinerary) to achieve the final objective.
 
-6_agent_patterns.py](<>) (Error Handling)
+[6_agent_patterns.py](<6_agent_patterns.py>) (Error Handling)
 *   Purpose: Make Agent Safe.
 *   Failure Handling: The execute_tool function has a generic try...except block that catches exceptions from tools and returns a standardized error message ("Error: {str(e)}. Try a different approach."), which is then fed back into the conversation history.
