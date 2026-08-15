@@ -1,0 +1,35 @@
+AI Agent - is an LLM that runs in loop, uses tools, pursues a goal and decide its own steps
+Agent Loop (Persive-Reason-Act Cycle) - User gives a Task -> LLM descide snext step -> Calls Tool (Execute action) -> Gets the resuolts back -> Asks itself if task is complete
+Persive - Takes in information from user, tool results and comversation history
+Reason - Desciding what to do next ie., which tool to call, what parameters to use and whether goal is completed
+Act - Takes action ie., Call a tool or generate a response
+Core Components
+    Memory - Remember past interactions
+    Planning & Reasoning - Break down complex tasks
+    Multi-Agent - Multiple agents work together
+Agent is build from 5 components
+    Model - Its brain, does the thinking
+    Tools - Its hands, let it interact with world
+    Memory - Context, everything it knows right now
+    Orchestration - Ties all the above together (Runs Persive-Reason-Act Cycle) ie., the while loop
+    System Prompt - Provide instructions and personality
+Guardrails
+    Max Iterations - Cap loop cycles (If agent runs >10 iterations - stop)
+    Token Budget - Limit reasoning tokens (Too many thinking steps - cut it off)
+    Explicit Instructions - Tell agent how to fail (If search returns nothing, try broader query)
+    Structured Outoput - Require plan format (Inspect plan before actions start)
+Agent Communication
+    Shared History - All agents read/write from same conversation (Simple and Grows large fast) A -> Log <- B
+    Handoffs - Pass a summary from one agent to next (Clean and Lossy compression) A -> Context -> B
+    Memory Store - Agent write to Common Database (Persistent and Add Infra) A -> Database, B -> Database
+Agent Failure Modes
+    Tool Failure - API down or invalid, request timeout 
+    Bad Selection - Wrong tool choice
+    Hallucinated - Tool doesn't exist or provide invalid parameters
+    Infinite Loops - Same action, no progress
+    Context Overflow - Conversation history too large
+    Model Errors - Rate limit, malformed
+Zippy - General Assistant
+Savvy - Research and Planning
+Meshy - Memory & Persistence
+Cody - Code & Automation
