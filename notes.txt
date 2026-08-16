@@ -29,6 +29,13 @@ Agent Failure Modes
     Infinite Loops - Same action, no progress
     Context Overflow - Conversation history too large
     Model Errors - Rate limit, malformed
+Metrics
+    Tokens per Request - Cost signal
+    Tool Calls per Request - Efficiency signal
+    Latency - Speed signal (LLM Time vs tool time)
+    Error Rate - Reliability signal
+    Loop Iterations - Complexity signal
+    Context Usage - Capacity signal
 Zippy - General Assistant
 Savvy - Research and Planning
 Meshy - Memory & Persistence
